@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="de">
+    <head>
+        <title>
+            ToDoList
+        </title>
+    </head>
+    <body>
+        <input type="text" id="newtext"/> 
+        <input type="button" id="newbutton" onclick="newpoint(newtext,newdiv)" value="NEW">
+        <h3>ToDoListe</h3>
+        <div id="newdiv"></div>
+
+        <script>
+            "use strict"
+
+            function newpoint(newtext,newdiv){
+                let newEl = document.createElement("p")
+                newEl.innerHTML = newtext.value
+
+                newEl.onclick = function() {
+                    del(this, newdiv);
+                }
+
+                newdiv.appendChild(newEl)
+
+                newtext.value = "";
+            }
+
+            function del(element,newdiv){
+                let empty = document.createElement("p")
+                empty.id = "empty"
+                newdiv.replaceChild(empty,element)
+            }
+        </script>
+    </body>
+</html>

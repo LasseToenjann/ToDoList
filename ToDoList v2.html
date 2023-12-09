@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html lang="de">
+    <head>
+        <title>
+            ToDoList
+        </title>
+        <style>
+            .div {
+                display: flex;
+            }
+            .newElement {
+                margin-right: 10px;
+                margin-left: 10px;
+            }
+            .newDelete {
+                font-size: 20px;
+                border-radius: 10px;
+                padding: 1px 10px;
+            }
+            .newEdit {
+                font-size: 20px;
+                border-radius: 10px;
+                padding: 1px 10px;
+            }
+            .editInput {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="text" id="newtext"/> 
+        <input type="button" id="newbutton" onclick="newpoint(newtext,newdiv)" value="NEW" class="newDelete">
+        <h1>ToDoListe</h1>
+        <div class="div" id="newdiv"></div>
+
+        <script>
+            "use strict"
+
+            function newpoint(newtext,newdiv){
+
+                let newEdit = document.createElement("button")
+                newEdit.innerHTML = "EDIT"
+
+                newEdit.onclick = function() {
+                    edit(this,newEl,newdiv)
+                }
+
+                newEdit.className = "newEdit"
+                newdiv.appendChild(newEdit)
+
+
+                let newEl = document.createElement("h2")
+                newEl.innerHTML = newtext.value
+
+                newEl.className = "newElement"
+                newdiv.appendChild(newEl)
+
+
+                let newDel = document.createElement("button")
+                newDel.innerHTML = "DEL"
+
+                newDel.onclick = function() {
+                    del(this,newEdit,newEl,newdiv)
+                }
+        
+                newDel.className = "newDelete"
+                newdiv.appendChild(newDel)
+
+                newtext.value = "";
+            }
+
+            function del(newEdit,newEl,newDel,newdiv){
+                let empty = document.createElement("p")
+                empty.id = "empty"
+                newdiv.replaceChild(empty,newEl)
+                newdiv.replaceChild(empty,newDel)
+                newdiv.replaceChild(empty,newEdit)
+            }
+
+            function edit(newEdit,newEl,newdiv){
+                let editInput = document.createElement("input")
+                editInput.type = "text"
+                editInput.value = newEl.innerHTML
+                editInput.className = "editInput"
+
+                let saveChange = document.createElement("button")
+                saveChange.innerHTML = "SAVE"
+
+                saveChange.onclick = function() {
+                    saveChange(this,newEdit,newEl,newdiv)
+                }
+
+                saveChange.className = "newEdit"
+
+                newdiv.replaceChild(editInput,newEl)
+                newdiv.replaceChild(saveChange,newEdit)
+            }
+
+            function saveChange(){
+
+            }
+        </script>
+    </body>
+</html>
