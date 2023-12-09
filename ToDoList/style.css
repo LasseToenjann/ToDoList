@@ -1,0 +1,21 @@
+.div {
+    display: flex;
+}
+.newElement {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.newDelete {
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 1px 10px;
+}
+.newEdit {
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 1px 10px;
+}
+.editInput {
+    margin-left: 10px;
+    margin-right: 10px;
+}
