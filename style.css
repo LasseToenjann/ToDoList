@@ -1,0 +1,39 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.input{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 20px 0;
+}
+#newtext{
+    margin-right: 5px;
+}
+#title{
+    text-align: center;
+}
+.div {
+    display: flex;
+    flex-wrap: wrap;
+}
+.newElement {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.newDelete {
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 1px 10px;
+}
+.newEdit {
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 1px 10px;
+}
+.editInput {
+    margin-left: 10px;
+    margin-right: 10px;
+}
